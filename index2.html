@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
+    <title>Happy Birthday</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            position: relative;
+            background: linear-gradient(to right, #0F4C75, #3282B8, #BBE1FA);
+            height: 100vh;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+            
+        }
+
+        .slider {
+            position: relative;
+            width: 200px;
+            height: 250px;
+            transform-style: preserve-3d;
+            animation: rotate 35s linear infinite;
+            margin-bottom: 100px;
+        }
+
+        @keyframes rotate {
+            0% {
+                transform: perspective(1000px) rotateY(0deg);
+            }
+            100% {
+                transform: perspective(1000px) rotateY(360deg);
+            }
+        }
+
+        .slider span {
+            position:absolute;
+            top: 0;right: 0;
+            width: 100%;
+            height: 100%;
+            transform-origin: center;
+            transform-style: preserve-3d;
+            transform: rotateY(calc(var(--i) * 45deg)) translateZ(-300px);
+
+        }
+
+        .slider span img {
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 100%;
+            height: 100%;
+            border-radius: 20px;
+            object-fit: contain;
+            transition: 2s;
+            transform: rotate(360deg);
+            
+
+        }
+
+        .slider span:hover img {
+            transform:translateY(-40px) scale(1.1);
+
+        }
+
+        .letterForm {
+            position: absolute;
+            top: 95%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 100px;
+            transition: .5s;
+            z-index: 6;
+            cursor: pointer;
+        }
+
+        .letterForm::before {
+            position: absolute;
+            background-color: #A77979;
+            width: 100px;
+            height: 100px;
+            content: "";
+            bottom: 0;
+            left: 0;
+            clip-path: polygon(0 40%, 50% 0, 100% 40%, 100% 100%, 0 100%);
+   
+        }
+
+        .letterForm::after {
+            position: absolute;
+            width: 100%;
+            background-color: #000;
+            content: "";
+            height: 10px;
+            bottom: -30px;
+            opacity: .4;
+            filter: blur(10px);
+            
+        }
+
+        .content {
+            position: absolute;
+            background-color: #F2EEE4;
+            width: 80%;
+            left: 50%;
+            bottom: 0;
+            transform: translate(-50%, -10px);
+            height: 80px;
+            transition: .5s;
+            padding: 20px;
+            border-radius: 10px;
+            border: solid 6px #395B64;
+        }
+
+        .mainContent {
+            overflow: auto;
+            width: 100%;
+            font-family: 'Dancing Script', cursive !important;
+            font-size: 28px;
+        }
+
+       
+
+        .designBox {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 60px;
+            background-color: #704F4F;
+            display: block;
+            clip-path: polygon(0 0, 50% 35%, 100% 0, 100% 100%, 0 100%);
+            cursor: pointer;
+        }
+
+        .designBox::after {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 65%;
+            background-color: #553939;
+            content: "";
+            clip-path: polygon(0 100%, 50% 0, 100% 100%);
+        }
+
+        .letterForm:hover .content {
+            transform: translate(-50%, -20px);
+        }
+
+        .content.actived {
+            bottom: 200px;
+            width: 600px;
+            height: fit-content;
+            max-height: 450px;
+            margin: 0;
+            left: 50%;
+            transform: translate(-50%);
+        }
+        .close {
+            opacity: 0;
+            transition: .5s;
+        }
+
+        .move {
+            position: absolute;
+            pointer-events: none;
+            filter: drop-shadow(0 0 15px rgba(0, 0, 0, 0,3));
+            animation: fadeInOut 1s linear infinite;
+        }
+
+        @keyframes fadeInOut {
+            0%, 100% {
+                opacity: 0;
+            } 20%, 80% {
+                opacity: 1;
+            }
+        }
+        .move::before {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: url('./img/heart.png');
+            background-size: cover;
+            animation: moveShape 1s linear infinite;
+        }
+
+        @keyframes moveShape {
+            0% {
+                transform: translate(0) rotate(0);
+            } 100% {
+                transform: translate(360px) rotate(360deg);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="slider">
+        <span style="--i: 1;"><img src="./img/image_1.jpg" alt=""></span>
+        <span style="--i: 2;"><img src="./img/image_2.jpg" alt=""></span>
+        <span style="--i: 3;"><img src="./img/image_3.jpg" alt=""></span>
+        <span style="--i: 4;"><img src="./img/image_9.jpg" alt=""></span>
+        <span style="--i: 5;"><img src="./img/image_5.jpg" alt=""></span>
+        <span style="--i: 6;"><img src="./img/image_6.jpg" alt=""></span>
+        <span style="--i: 7;"><img src="./img/image_7.jpg" alt=""></span>
+        <span style="--i: 8;"><img src="./img/image_9.jpg" alt=""></span>
+        
+    </div>
+    <div class="letterForm">
+        <input type="checkbox" id="mess">
+        <div class="content">
+          <div class="mainContent"></div>
+          <div class="img1"><img class="img" src="" alt=""></div>
+        </div>
+        <label class="designBox" for="mess"></label>
+    </div>
+
+    <script>
+
+        const mainContentLetter = "Hôm nay là một ngày đặc biệt, là ngày mà thiên thần của anh được sinh ra đời. Chúc cho em có một ngày sinh nhật thật vui vẻ, hạnh phúc. Sang tuổi mới chúc cho em ngày càng xinh đẹp, luôn tươi vui và nhớ phải nghe lời anh hơn, có dỗi thì cũng đừng dỗi lâu phải để cho dỗ nghe chưa. Mãi yêu em ..."
+        document.querySelector("#mess").addEventListener("change", function () { //Hiệu ứng gõ chữ cho phần nội dung của bức thư
+            if (this.checked == true) {
+                document.querySelector(".content").classList.add("actived")
+                const splitMainContentLetter = mainContentLetter.split("");
+
+                splitMainContentLetter.forEach((val, index) => {
+                    setTimeout(() => {
+                        document.querySelector(".mainContent").innerHTML += val;
+                        if (index == mainContentLetter.length - 1) {
+                            document.querySelector(".img1").setAttribute("style", "opacity: 1; transition: .5s")
+                        }
+                    }, 80 * index)
+                })
+
+            } else {
+                document.querySelector(".content").classList.remove("actived")
+                document.querySelector(".img1").setAttribute("style", "opacity: 0; transition: .5s")
+                document.querySelector(".mainContent").innerHTML = "";
+            }
+        })
+
+        document.addEventListener('mousemove', (e) => {
+            let body = document.querySelector('body')
+            let heart = document.createElement('span')
+            heart.classList.add('move')
+            let x = e.offsetX
+            let y = e.offsetY
+            heart.style.left = x +'px'
+            heart.style.top = y + 'px'
+
+            let size = Math.random() * 80
+            heart.style.width = 20 + size+'px'
+            heart.style.height = 20 + size+'px'
+
+            let transormValue = Math.random() * 360
+            heart.style.transform = 'rotate('+ transormValue +' deg)'
+            body.appendChild(heart)
+
+            setTimeout(() => {
+                heart.remove()
+            }, 1000)
+        })
+
+        
+
+    </script>
+</body>
+</html>

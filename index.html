@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Alkatra:wght@500&family=Dancing+Script&display=swap');
+    
+
+
+    html {
+      padding: 0;
+      margin: 0;
+      box-sizing: border-box;
+      height: 100%;
+      font-family:Arial, Helvetica, sans-serif;
+    }
+
+    body {
+      position: relative;
+      height: 100%;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0;
+      background-image: linear-gradient(to bottom right ,#8EC3B0, #DEF5E5);
+    }
+
+    .title {
+      margin: 0;
+      padding-top: 20px;
+      font-size: 70px;
+      font-weight: 900;
+      -webkit-text-stroke: 2px #ff2f4b;
+      color: transparent;
+      font-family: 'Dancing Script', cursive;
+      
+    }
+
+    .name__group {
+      display: flex;
+      align-items: baseline;
+      justify-content: center;
+    }
+
+    .name {
+      margin: 0;
+      padding: 0 20px;
+      font-size: 60px;
+      font-weight: 800;
+      text-align: center;
+      -webkit-text-stroke: 2px #ff2f4b;
+      color: transparent;
+      font-family: 'Dancing Script', cursive;
+      
+    }
+
+    .icon__birthday {
+      font-size: 30px;
+      -webkit-text-stroke: 2px #ff2f4b;
+      color: transparent;
+    }
+
+    .button__link {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-around;
+      margin-bottom: 100px;
+    }
+
+    .svg__line {
+      position: relative;
+      height: 160px;
+      width: 1000px;
+      overflow:hidden ;
+      margin-bottom: 40px;
+    }
+
+    .button__link span {
+      padding-bottom: 8px;
+      color: #ff2f4b;
+      font-size: 24px;
+      font-family: 'Dancing Script', cursive;
+    }
+
+    .button__link a {
+      color: #ff2f2f;
+      text-decoration: none;
+      font-size: 28px;
+      animation: tada 2.4s linear infinite;
+      animation-delay: 2s;
+    }
+
+    .heart {
+      font-size: 200px;
+      position: absolute;
+      -webkit-text-stroke: 3px #ff2f4b;
+      -webkit-text-fill-color: transparent;
+      -webkit-background-clip: text;
+      color: transparent;
+      background-image: url(./img/img_1.jpg);
+      background-size: cover;
+      bottom: 89px;
+      background-position-y: 40%;
+
+    }
+
+    .svg__line polyline {
+      stroke-dasharray: 1800;
+      animation: linerun reverse 5s linear infinite;
+    
+    }
+
+    @keyframes linerun {
+      0% {
+        stroke-dashoffset: 0;
+      } 100% {
+        stroke-dashoffset: 1800;
+      }
+    }
+    
+    .line {
+      stroke: #ff2f4b;
+      stroke-width: 2px;
+      fill: none;
+    }
+
+    .square {
+      position: absolute;
+      width: 60px;
+      height: 60px;
+      background-color: transparent;
+      border: 6px solid #FF865E;
+    }
+
+    .square:nth-child(1) {
+      top: 12%;
+      left: 9%;
+      animation: animate 6s infinite linear;
+    }
+    .square:nth-child(2) {
+      top: 40%;
+      left: 59%;
+      animation: animate 9s infinite linear;
+    }
+    .square:nth-child(3) {
+      top: 36%;
+      left: 21%;
+      animation: animate 12s infinite linear;
+    }
+    .square:nth-child(4) {
+      top: 33%;
+      left: 86%;
+      animation: animate 9s infinite linear;
+    }
+    .square:nth-child(5) {
+      top: 84%;
+      left: 62%;
+      animation: animate 8s infinite linear;
+    }
+    .square:nth-child(6) {
+      top: 58%;
+      left: 3%;
+      animation: animate 7s infinite linear;
+    }
+    .square:nth-child(7) {
+      top: 60%;
+      left: 32%;
+      animation: animate 12s infinite linear;
+    }
+    .square:nth-child(8) {
+      top: 13%;
+      left: 75%;
+      animation: animate 16s infinite linear;
+    }
+    .square:nth-child(9) {
+      top: 60%;
+      left: 76%;
+      animation: animate 10s infinite linear;
+    }
+    .square:nth-child(10) {
+      top: 87%;
+      left: 25%;
+      animation: animate 6s infinite linear;
+    }
+
+    @keyframes animate {
+      0% {
+        transform: scale(0) translateY(0) rotate(0);
+        opacity: 1;
+      } 100% {
+        transform: scale(1.2) translateY(-90px) rotate(360deg);
+        opacity: 0;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="square"></div>
+  <div class="square"></div>
+  <div class="square"></div>
+  <div class="square"></div>
+  <div class="square"></div>
+  <div class="square"></div>
+  <div class="square"></div>
+  <div class="square"></div>
+  <div class="square"></div>
+  <div class="square"></div>
+  <div  style="animation: pulse reverse 1.5s linear infinite;">
+    <h1 class="title">Happy Birthday</h1>
+    <div class="name__group">
+      <i class="fa-solid fa-cake-candles icon__birthday"></i>
+      <h2 class="name"> ! Bắp !</h2>
+      <i class="fa-solid fa-cake-candles icon__birthday"></i>
+    </div>
+  </div>
+
+  <div class="button__link">
+    <span>Click vào lá thư đi nè!!!</span>
+    <a href="./index2.html">
+      <i class="fa-solid fa-envelope"></i>
+    </a>
+  </div>
+  <div class="svg__line">
+    <svg height = "160" width = "1000" style="margin-bottom: 90px;">
+      <polyline class="line" points = "0,80 10,80 30,80 40,80 50,80 60,40 85,140 105,10 125,120 135,80 160,80 865,80 870,80 880,120 900,10 920,140 940,40 950,80 990,80 1000,80"/>
+    </svg>
+  </div>
+
+  <span class="heart">
+    <i class="fa-solid fa-heart"></i>
+  </span>
+
+  
+</body>
+</html>
